@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./App.css";
-import { FaGithub, FaChevronDown } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <div className="name">Sam Autrey</div>
           </div>
           <div className="intro-wrapper">
-            <div className="intro-title">Mobile Developer.</div>
+            <div className="intro-title">Mobile Developer</div>
             <div className="intro-bio">
               I'm a full-stack developer with a passion for intuitive design,
               world changing technologies, and open-source development.
@@ -30,8 +30,7 @@ function App() {
                 Contact
               </a>
               <a href="#" className="resume">
-                See Resume&nbsp;&nbsp;&nbsp;
-                <FaChevronDown />
+                See Resume
               </a>
             </div>
           </div>

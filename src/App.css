@@ -88,6 +88,7 @@ a:active {
   background-color: #00d1ac;
   padding: 0.5rem 1rem;
   border-radius: 100px;
+  border: 1px solid #00d1ac;
   color: #fff;
 }
 
@@ -100,6 +101,10 @@ a:active {
   display: flex;
   align-items: center;
   color: #00d1ac;
+  text-align: center;
+  border: 1px solid #00d1ac;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
 }
 
 @media (max-width: 800px) {
