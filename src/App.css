@@ -8,14 +8,7 @@
 }
 
 .aside {
-  background-color: tomato;
   flex: 1;
-}
-
-@media (max-width: 800px) {
-  .aside {
-    flex: 0;
-  }
 }
 
 .welcome {
@@ -42,26 +35,79 @@ a:active {
   flex: 1;
   align-items: center;
   justify-content: center;
-  background-color: turquoise;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin: 0.5rem;
+}
+
+.name {
+  margin: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 500;
 }
 
 .intro-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  flex: 1;
   text-align: center;
-  background-color: gold;
+}
+
+.intro-title {
+  font-size: 4rem;
+  color: #00d1ac;
+  font-weight: bolder;
+}
+
+.intro-bio {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .skills {
-  background-color: pink;
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
-.skill {
-  margin: 1em;
+.welcome-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.contact,
+.contact:link,
+.contact:visited {
+  margin: 0.5rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  background-color: #00d1ac;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  color: #fff;
+}
+
+.resume,
+.resume:link,
+.resume:visited {
+  margin: 0.5rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  color: #00d1ac;
+}
+
+@media (max-width: 800px) {
+  .aside {
+    flex: 0;
+  }
+  .welcome-buttons-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }
