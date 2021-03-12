@@ -1,38 +1,67 @@
 .App {
-  text-align: center;
+  display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  flex: 2;
+  padding: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.aside {
+  background-color: tomato;
+  flex: 1;
+}
+
+@media (max-width: 800px) {
+  .aside {
+    flex: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.welcome {
+  flex: 1;
+  height: 100vh;
   flex-direction: column;
+  display: flex;
+}
+
+.gh-icon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  text-decoration: none;
+}
+
+a:visited,
+a:active {
+  color: black;
+}
+
+.name-wrapper {
+  display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: turquoise;
 }
 
-.App-link {
-  color: #61dafb;
+.intro-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+  text-align: center;
+  background-color: gold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.skills {
+  background-color: pink;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill {
+  margin: 1em;
 }
