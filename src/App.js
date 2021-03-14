@@ -30,8 +30,7 @@ function App() {
                 Contact
               </a>
               <a href="#" className="resume">
-                See Resume&nbsp;&nbsp;&nbsp;
-                <FaChevronDown />
+                See Resume
               </a>
             </div>
           </div>
