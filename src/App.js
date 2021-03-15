@@ -22,7 +22,7 @@ function App() {
             <div className="name">Sam Autrey</div>
           </div>
           <div className="intro-wrapper">
-            <div className="intro-title">Mobile Developer.</div>
+            <div className="intro-title">Mobile Developer</div>
             <div className="intro-bio">
               I'm a full-stack developer with a passion for intuitive design,
               world changing technologies, and open-source development.
