@@ -121,6 +121,50 @@ a:active {
   transform: scale(1.1)
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section>.title {
+  font-size: 2.5rem;
+  color: #00d1ac;
+  font-weight: 500;
+  text-align: center;
+}
+
+.explain-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.explain-col {
+  flex: 1;
+  margin: 1rem 1.7rem;
+}
+
+.explain-header {
+  font-size: 1.75rem;
+}
+
+.explain-header::before {
+  content: "1";
+  font-size: 1.25rem;
+  margin-right: .50rem;
+  background-color: #00d1ac;
+  padding: .5rem 1rem;
+  border-radius: 200px;
+}
+
+.explain-header.two::before {
+  content: "2";
+}
+
+.explain-body {
+  font-size: 1rem;
+}
+
 @media (max-width: 800px) {
   .aside {
     flex: 0;
@@ -128,5 +172,8 @@ a:active {
   .welcome-buttons-wrapper {
     flex-direction: column;
     align-items: center;
+  }
+  .explain-wrapper {
+    flex-direction: column;
   }
 }

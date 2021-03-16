@@ -44,6 +44,26 @@ function App() {
             <SiAmazonaws size={65} className="skill" />
           </div>
         </div>
+        <section className="offwhite">
+          <div className="title primary">Demonstrated Expertise</div>
+          <div className="explain-wrapper">
+            <aside className="explain-col">
+              <div className="explain-header">Intuitive and Modern</div>
+              <div className="explain-body">
+                Delivering a product that is not only intuitive, but enjoyable
+                to use is my top priority.
+              </div>
+            </aside>
+            <aside className="explain-col">
+              <div className="explain-header two">Quickly Implemented</div>
+              <div className="explain-body">
+                Using Facebook’s React-Native and modern day cloud
+                infrastructure such as AWS or Google Cloud Services ensures a
+                quick, successful, and scalable product.
+              </div>
+            </aside>
+          </div>
+        </section>
       </main>
       <aside className="aside aside2" />
     </div>
