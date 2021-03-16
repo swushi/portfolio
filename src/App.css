@@ -12,7 +12,6 @@
 }
 
 .welcome {
-  flex: 1;
   height: 100vh;
   flex-direction: column;
   display: flex;
@@ -78,6 +77,17 @@ a:active {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.skill {
+  transition: all 0.2s linear;
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+.skill.showing {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 .welcome-buttons-wrapper {
@@ -168,6 +178,12 @@ section>.title {
 @media (max-width: 800px) {
   .aside {
     flex: 0;
+  }
+  .welcome {
+    height: 80%;
+  }
+  .name {
+    font-size: 2.0rem;
   }
   .welcome-buttons-wrapper {
     flex-direction: column;

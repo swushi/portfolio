@@ -3,8 +3,24 @@ import "./App.css";
 import { FaGithub } from "react-icons/fa";
 import { SiFirebase, SiReact, SiRedux, SiAmazonaws } from "react-icons/si";
 import { DiJavascript1 } from "react-icons/di";
+import { useEffect, useRef } from "react";
+
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 function App() {
+  const skillsRef = useRef(null);
+  useEffect(() => {
+    animateIcons();
+  }, []);
+
+  const animateIcons = async () => {
+    const children = skillsRef.current.children;
+    for (let child of children) {
+      child.classList.toggle("showing");
+      await delay(100);
+    }
+  };
+
   return (
     <div className="App">
       <aside className="aside aside1" />
@@ -36,7 +52,7 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="skills">
+          <div className="skills" ref={skillsRef}>
             <SiReact size={50} className="skill" />
             <SiFirebase size={50} className="skill" />
             <DiJavascript1 size={65} className="skill" />
