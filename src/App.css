@@ -23,6 +23,12 @@
   right: 1rem;
   top: 1rem;
   text-decoration: none;
+  color: black;
+  transition: all 0.2s linear;
+}
+
+.gh-icon:hover {
+  transform: scale(1.1)
 }
 
 a:visited,
@@ -90,6 +96,7 @@ a:active {
   border-radius: 100px;
   border: 1px solid #00d1ac;
   color: #fff;
+  transition: all 0.2s ease-in-out;
 }
 
 .resume,
@@ -98,13 +105,20 @@ a:active {
   margin: 0.5rem;
   text-decoration: none;
   font-size: 1.1rem;
-  display: flex;
-  align-items: center;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  border: 1px solid #00d1ac;
   color: #00d1ac;
   text-align: center;
   border: 1px solid #00d1ac;
   padding: 0.5rem 1rem;
   border-radius: 100px;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact:hover, .resume:hover {
+  transform: scale(1.1)
 }
 
 @media (max-width: 800px) {

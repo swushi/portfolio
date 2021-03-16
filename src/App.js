@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./App.css";
 import { FaGithub } from "react-icons/fa";
+import { SiFirebase, SiReact, SiRedux, SiAmazonaws } from "react-icons/si";
+import { DiJavascript1 } from "react-icons/di";
 
 function App() {
   return (
@@ -35,11 +37,11 @@ function App() {
             </div>
           </div>
           <div className="skills">
-            <FaGithub size={50} className="skill" />
-            <FaGithub size={50} className="skill" />
-            <FaGithub size={50} className="skill" />
-            <FaGithub size={50} className="skill" />
-            <FaGithub size={50} className="skill" />
+            <SiReact size={50} className="skill" />
+            <SiFirebase size={50} className="skill" />
+            <DiJavascript1 size={65} className="skill" />
+            <SiRedux size={50} className="skill" />
+            <SiAmazonaws size={65} className="skill" />
           </div>
         </div>
       </main>
