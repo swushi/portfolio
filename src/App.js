@@ -16,8 +16,8 @@ function App() {
   const animateIcons = async () => {
     const children = skillsRef.current.children;
     for (let child of children) {
-      child.classList.toggle("showing");
-      await delay(100);
+      child.classList.add("showing");
+      await delay(75);
     }
   };
 
@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <aside className="aside aside1" />
       <main className="container">
-        <div className="welcome">
+        <div className="welcome" style={{ height: window.innerHeight }}>
           <a href="#" className="gh-icon">
             <FaGithub size={30} />
           </a>
@@ -61,17 +61,24 @@ function App() {
           </div>
         </div>
         <section className="offwhite">
+          <div className="bg bg-left offwhite" />
           <div className="title primary">Demonstrated Expertise</div>
           <div className="explain-wrapper">
             <aside className="explain-col">
-              <div className="explain-header">Intuitive and Modern</div>
+              <div className="explain-header-wrapper">
+                <div className="explain-number">1</div>
+                <div className="explain-header">Intuitive and Modern</div>
+              </div>
               <div className="explain-body">
                 Delivering a product that is not only intuitive, but enjoyable
                 to use is my top priority.
               </div>
             </aside>
             <aside className="explain-col">
-              <div className="explain-header two">Quickly Implemented</div>
+              <div className="explain-header-wrapper">
+                <div className="explain-number">1</div>
+                <div className="explain-header two">Quickly Implemented</div>
+              </div>
               <div className="explain-body">
                 Using Facebook’s React-Native and modern day cloud
                 infrastructure such as AWS or Google Cloud Services ensures a
