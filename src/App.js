@@ -4,6 +4,9 @@ import { FaGithub } from "react-icons/fa";
 import { SiFirebase, SiReact, SiRedux, SiAmazonaws } from "react-icons/si";
 import { DiJavascript1 } from "react-icons/di";
 import { useEffect, useRef, useState } from "react";
+import accountable_mockup from "./accountable_mockup.png";
+import iprof_mockup from "./iprof_mockup.png";
+import avatar from "./avatar.jpg";
 
 function App() {
   const [, setInnerHeight] = useState(window.innerHeight);
@@ -31,11 +34,7 @@ function App() {
           <FaGithub size={30} />
         </a>
         <div className="name">
-          <img
-            src="https://source.unsplash.com/random/50x50"
-            alt="alt"
-            className="avatar"
-          />
+          <img src={avatar} alt="alt" className="avatar" />
           <h2 class="text-center">Sam Autrey</h2>
         </div>
         <div className="intro">
@@ -92,6 +91,8 @@ function App() {
               </p>
             </aside>
           </div>
+          <img src={accountable_mockup} alt="a pic"></img>
+          <img src={iprof_mockup} alt="a pic"></img>
         </div>
       </section>
     </div>

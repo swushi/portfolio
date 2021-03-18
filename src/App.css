@@ -92,6 +92,8 @@ header > .name > * {
 
 header > .name > img {
   border-radius: 500px;
+  height: 3rem;
+  width: auto;
 }
 
 .intro {
@@ -202,10 +204,14 @@ section {
   padding-top: 5em;
 }
 
+section h2 {
+  margin-bottom: 0.5em;
+}
+
+
 .split {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .split div {
@@ -228,6 +234,19 @@ section {
   margin-left: 0.5em;
 }
 
+section > div > img {
+  margin-top: 2em;
+}
+
+section > div > img + img{
+  margin-top: 6em;
+}
+
+section > div > img {
+  width: 100%;
+  height: auto;
+}
+
 @media (min-width: 40em) {
   .split {
     flex-direction: row;
@@ -241,9 +260,6 @@ section {
   }
 }
 
-.split > * {
-  margin-top: 2em;
-}
 
 
 
