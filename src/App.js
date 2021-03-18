@@ -6,18 +6,28 @@ import { DiJavascript1 } from "react-icons/di";
 import { useEffect, useRef, useState } from "react";
 
 function App() {
-  const [innerHeight, setInnerHeight] = useState(window.innerHeight);
+  const [, setInnerHeight] = useState(window.innerHeight);
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+  const height = useRef(window.innerHeight).current;
 
+  function handleWindowSizeChange() {
+    setInnerHeight(window.innerHeight);
+    setInnerWidth(window.innerWidth);
+    console.log("resize");
+  }
   useEffect(() => {
-    window.addEventListener("resize", (evt) => {
-      setInnerHeight(window.innerHeight);
-    });
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
   }, []);
+
+  const isMobile = innerWidth <= 768;
 
   return (
     <div className="App">
-      <header style={{ height: innerHeight }}>
-        <a href="#">
+      <header style={{ height: isMobile ? height : window.innerHeight }}>
+        <a href="https://www.github.com/swushi">
           <FaGithub size={30} />
         </a>
         <div className="name">
@@ -55,34 +65,35 @@ function App() {
         </div>
       </header>
 
-      <section className="offwhite">
-        <div className="bg bg-left offwhite" />
-        <div className="title primary">Demonstrated Expertise</div>
-        <div className="explain-wrapper">
-          <aside className="explain-col">
-            <div className="explain-header-wrapper">
-              <div className="explain-number">1</div>
-              <div className="explain-header">Intuitive and Modern</div>
-            </div>
-            <div className="explain-body">
-              Delivering a product that is not only intuitive, but enjoyable to
-              use is my top priority.
-            </div>
-          </aside>
-          <aside className="explain-col">
-            <div className="explain-header-wrapper">
-              <div className="explain-number">1</div>
-              <div className="explain-header two">Quickly Implemented</div>
-            </div>
-            <div className="explain-body">
-              Using Facebook’s React-Native and modern day cloud infrastructure
-              such as AWS or Google Cloud Services ensures a quick, successful,
-              and scalable product.
-            </div>
-          </aside>
+      <section>
+        <div>
+          <h2>Demonstrated Expertise</h2>
+          <div className="split">
+            <aside>
+              <div>
+                <span>1</span>
+                <h3>Intuitive and Modern</h3>
+              </div>
+              <p>
+                Delivering a product that is not only intuitive, but enjoyable
+                to use is my top priority.
+              </p>
+            </aside>
+
+            <aside>
+              <div>
+                <span>2</span>
+                <h3>Quickly Implemented</h3>
+              </div>
+              <p>
+                Using Facebook’s React-Native and modern day cloud
+                infrastructure such as AWS or Google Cloud Services ensures a
+                quick, successful, and scalable product.
+              </p>
+            </aside>
+          </div>
         </div>
       </section>
-      <aside className="aside aside2" />
     </div>
   );
 }
