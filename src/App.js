@@ -1,7 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./App.css";
 import { FaGithub } from "react-icons/fa";
-import { SiFirebase, SiReact, SiRedux, SiAmazonaws } from "react-icons/si";
+import {
+  SiFirebase,
+  SiReact,
+  SiRedux,
+  SiAmazonaws,
+  SiLinkedin,
+  SiGithub,
+  SiNpm,
+} from "react-icons/si";
 import { DiJavascript1 } from "react-icons/di";
 import { useEffect, useRef, useState } from "react";
 import accountable_mockup from "./accountable_mockup.png";
@@ -30,11 +38,14 @@ function App() {
   return (
     <div className="App">
       <header style={{ height: isMobile ? height : window.innerHeight }}>
+        <div class="banner" />
         <a href="https://www.github.com/swushi">
-          <FaGithub size={30} />
+          <FaGithub size={30} color="#fff" />
         </a>
+        <div className="avatar">
+          <img src={avatar} alt="alt" />
+        </div>
         <div className="name">
-          <img src={avatar} alt="alt" className="avatar" />
           <h2 class="text-center">Sam Autrey</h2>
         </div>
         <div className="intro">
@@ -64,7 +75,7 @@ function App() {
         </div>
       </header>
 
-      <section>
+      <section className="bg-offwhite">
         <div>
           <h2>Demonstrated Expertise</h2>
           <div className="split">
@@ -95,6 +106,44 @@ function App() {
           <img src={iprof_mockup} alt="a pic"></img>
         </div>
       </section>
+
+      <section>
+        <div>
+          <h2>Popular in the Community</h2>
+          <div className="split">
+            <aside>
+              <div>
+                <span>1</span>
+                <h3>Open Source Projects</h3>
+              </div>
+              <p>
+                Popular Input package built with Software Mansion’s library
+                Reanimated V2, streamlining efficiency, averaging ~600 weekly
+                downloads on NPM.
+              </p>
+            </aside>
+
+            <aside>
+              <div>
+                <span>2</span>
+                <h3>Giving Back</h3>
+              </div>
+              <p>
+                Consistenly engaged in community discussions regarding anything
+                React, React-Native, or Google Cloud while also teaching less
+                experienced developers.
+              </p>
+            </aside>
+          </div>
+          <img src={accountable_mockup} alt="a pic"></img>
+          <img src={iprof_mockup} alt="a pic"></img>
+        </div>
+      </section>
+      <footer>
+        <SiLinkedin size={50} />
+        <SiGithub size={50} />
+        <SiNpm size={50} />
+      </footer>
     </div>
   );
 }
