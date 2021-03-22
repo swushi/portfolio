@@ -1,6 +1,7 @@
 :root {
-  --color-offwhite: #f2f2f2;
-  --color-primary: #00D1AC;
+  --color-offblack: #383838;
+  --color-blue-500: #00D1AC;
+  --color-blue-300: #00EBC1;
 }
 
 *, *::before, *::after {
@@ -8,14 +9,11 @@
   font-family: 'Lato', sans-serif;
 }
 
-
 h1 {
-  color: var(--color-primary);
   font-size: 3em;
 }
 
 h2 {
-  color: var(--color-primary);
   font-size: 2.1em;
 }
 
@@ -25,280 +23,119 @@ h3 {
 
 @media (min-width: 40em) {
   h1 {
-    font-size: 4em;
+    font-size: 5.75em;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+  
+  h3 {
+    font-size: 1.25em;
   }
 }
 
-h1,h2,h3,span,a {
-  line-height: 1em;
+h1,h2,h3,h6,span,a {
+  line-height: 0.85em;
   margin: 0;
 }
 
 p {
-  line-height: 1.5em;
+  line-height: 1.7em;
   margin-top: 0.5em;
+  color: var(--color-offblack);
 }
 
-.text-center {
-  text-align: center;
-}
-
-header, section {
-  padding: 1em;
-}
-
-.banner {
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 4em;
-  position: absolute;
-  background-color: var(--color-primary);
-}
-
-header, section > div {
+header {
+  padding: 1rem;
+  margin-inline: auto;
+  background-color: var(--color-blue-500);
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  z-index: -100;
+  justify-content: center;
+}
+
+header > .content {
   max-width: 41em;
   margin-inline: auto;
-}
-
-header > a {
-  position: absolute;
-  top: 1rem;
-  right: 0.5rem;
-  color: #000;
-  transition: transform 200ms ease-in-out;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
-  transform: translateZ(0) scale(0.9);
-}
-
-header > a:hover {
-  transform: scale(1);
-}
-
-header h2 {
-  color: #fff;
-}
-
-header > .name {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex: 1;
-  animation: fadeInUp 750ms ease;
-  animation-iteration-count: 1;
-  animation-fill-mode: backwards;
-  position: relative;
-}
-
-header > .name > * {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-header > .avatar {
-  border-radius: 100px;
-  overflow: hidden;
-  height: 3rem;
-  width: 3rem;
-  position: absolute;
-  left: 0.5rem;
-  top: 0.5rem;
-  text-align: center;
-}
-
-header > .avatar > img {
-  height: auto;
-  width: 100%;
-}
-
-.intro {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex: 1;
-  animation: fadeInUp 750ms ease;
-  animation-iteration-count: 1;
-  animation-fill-mode: backwards;
-  animation-delay: 200ms;
-  position: relative;
+  z-index: 100;
 }
 
-.intro > .buttons {
+header > .content > .top {
+  flex: 4;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.intro > .buttons > a {
+header > .content > .bottom {
+  flex: 5;
+}
+
+header > .content > .bottom > p {
+  margin-top: 1em;
+}
+
+header > .content > .bottom > a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  width: 9em;
-  height: 2.5em;
-  background-color: var(--color-primary);
-  text-decoration: none;
-  color: #fff;
-  border-radius: 4px;
-  transition: transform 200ms ease-in-out;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
-  transform: translateZ(0) scale(0.9);
-}
-
-.intro > .buttons > a:hover {
-  transform: translateZ(0) scale(1.0);
-}
-
-.intro > .buttons > .resume {
   background-color: #fff;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-}
-
-.skills {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex: 1;
-}
-
-.skills > * {
-  animation: fadeInUp 750ms ease;
-  animation-iteration-count: 1;
-  animation-fill-mode: backwards;
-  position: relative;
-}
-
-
-@keyframes fadeInLeft {
-  from {
-    transform: translateX(-25px);
-    opacity: 0;
-  }
-  to   {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    transform: translateY(25px);
-    opacity: 0;
-  }
-  to   {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.skills > *:nth-child(5) {
-  animation-delay: 0ms;
-}
-
-.skills > *:nth-child(4) {
-  animation-delay: 100ms;
-}
-
-.skills > *:nth-child(3) {
-  animation-delay: 200ms;
-}
-
-.skills > *:nth-child(2) {
-  animation-delay: 300ms;
-}
-
-.skills > *:nth-child(1) {
-  animation-delay: 400ms;
-}
-
-.bg-offwhite {
-  background-color: var(--color-offwhite);
-}
-
-section {
-  padding-top: 5em;
-}
-
-section h2 {
-  margin-bottom: 0.5em;
-}
-
-
-.split {
-  display: flex;
-  flex-direction: column;
-}
-
-.split div {
-  display: flex;
-  align-items: center;
-}
-
-.split span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  height: 1.75em;
-  width: 1.75em;
-  background-color: var(--color-primary);
+  width: 8em;
+  height: 2em;
   border-radius: 100px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 3em;
 }
 
-.split h3 {
-  margin-left: 0.5em;
-}
-
-section > div > img {
-  margin-top: 2em;
-}
-
-section > div > img + img{
-  margin-top: 6em;
-}
-
-section > div > img {
-  width: 100%;
-  height: auto;
-}
-
-section img:last-of-type {
-  margin-bottom: 3em;
-}
-
-@media (min-width: 40em) {
-  .split {
-    flex-direction: row;
-  }
-  .split > * {
-    flex-basis: 100%;
-  }
-  
-  .split > * + * {
-    margin-left: 2em;
-  }
-}
-
-footer {
+header > navbar {
+  position: absolute;
   display: flex;
-  justify-content: center;
-  background-color: var(--color-offwhite);
-  padding: 3em;
+  right: 1rem;
 }
 
-footer > * {
-  margin-left: 1rem;
-  margin-right: 1rem;
+header > navbar > * {
+  margin-left: 1em;
+}
+
+.avatar {
+  position: absolute;
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color:var(--color-blue-300);
+  top: 10vw;
+  right: 4vw;
 }
 
 
+.avatar > img {
+  height: auto;
+  width: 100%;
+  margin-top: 5vw;
+}
+.circle {
+  height: 25vw;
+  width: 25vw;
+  border-radius: 50%;
+  background-color: var(--color-blue-300);
+  position: absolute;
+}
 
+.circle.circle1 {
+  top: -4vw;
+  left: -4vw;
+}
 
-
-
+.circle.circle2 {
+  bottom: 2vw;
+  transform: translateX(-10vw);
+  align-self: center;
+}
