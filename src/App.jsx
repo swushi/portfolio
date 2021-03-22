@@ -9,8 +9,11 @@ import {
   SiLinkedin,
   SiGithub,
   SiNpm,
+  SiTypescript,
+  SiGraphql,
+  SiDatacamp,
 } from "react-icons/si";
-import { DiJavascript1 } from "react-icons/di";
+import { DiDatabase, DiGoogleCloudPlatform } from "react-icons/di";
 import { useEffect, useRef, useState } from "react";
 import accountable_mockup from "./accountable_mockup.png";
 import iprof_mockup from "./iprof_mockup.png";
@@ -37,10 +40,13 @@ function App() {
 
   return (
     <div className="App">
-      <header style={{ height: window.innerHeight }}>
+      <header style={{ height: isMobile ? height : window.innerHeight }}>
         <div className="circle circle1"></div>
         <div className="circle circle2"></div>
-        <div className="avatar"><img src={avatar} alt="Sam" /></div>
+        <div className="circle circle3"></div>
+        <div className="avatar">
+          <img src={avatar} alt="Sam" />
+        </div>
         <navbar>
           <h3>Skills</h3>
           <h3>Projects</h3>
@@ -52,11 +58,60 @@ function App() {
           </div>
           <div className="bottom">
             <h1>Mobile and Web Developer</h1>
-            <p>Self-taught, full-stack developer with a passion for fluid design, world changing technologies, and open-source development with great experience with web and mobile apps.</p>
-            <a href="mailto:samautrey7@gmail.com" className="hello">SAY HELLO</a>
+            <p>
+              Self-taught, full-stack developer with a passion for fluid design,
+              world changing technologies, and open-source development with
+              great experience with web and mobile apps.
+            </p>
+            <a href="#" className="hello">
+              SAY HELLO
+            </a>
           </div>
         </div>
       </header>
+      <section>
+        <div className="content">
+          <h2>Skills</h2>
+          <div className="skills">
+            <div className="skill">
+              <SiReact size={50} />
+              <p>React-Native</p>
+            </div>
+            <div className="skill">
+              <SiTypescript size={50} />
+              <p>TypeScript</p>
+            </div>
+            <div className="skill">
+              <DiGoogleCloudPlatform size={50} />
+              <p>Google Cloud</p>
+            </div>
+            <div className="skill">
+              <SiAmazonaws size={50} />
+              <p>AWS</p>
+            </div>
+            <div className="skill">
+              <SiReact size={50} />
+              <p>ReactJS</p>
+            </div>
+            <div className="skill">
+              <SiRedux size={50} />
+              <p>Redux</p>
+            </div>
+            <div className="skill">
+              <SiGraphql size={50} />
+              <p>GraphQL</p>
+            </div>
+            <div className="skill">
+              <DiDatabase size={50} />
+              <p>NoSQL</p>
+            </div>
+            <div className="skill">
+              <SiFirebase size={50} />
+              <p>Firebase</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

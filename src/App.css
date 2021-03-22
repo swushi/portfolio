@@ -80,18 +80,22 @@ header > .content > .bottom > p {
   margin-top: 1em;
 }
 
-header > .content > .bottom > a {
+.hello {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
   width: 8em;
-  height: 2em;
+  height: 3em;
   border-radius: 100px;
   color: #000;
   text-decoration: none;
   font-weight: 700;
   margin-top: 3em;
+}
+
+.hello:hover {
+  transform: scale(1.1);
 }
 
 header > navbar {
@@ -137,5 +141,51 @@ header > navbar > * {
 .circle.circle2 {
   bottom: 2vw;
   transform: translateX(-10vw);
-  align-self: center;
+}
+
+.circle.circle3 {
+  bottom: -15vw;
+  right: -5vw;
+  transform: scale(0.8);
+}
+
+section {
+  padding: 1rem;
+  margin-top: 10vh;
+}
+
+section > .content {
+  margin-inline: auto;
+  position: relative;
+  z-index: -100;
+  max-width: 41em;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1rem;
+  grid-gap: 1em;
+}
+
+@media (min-width: 40em) {
+  .skills {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.skills > * {
+  background-color: var(--color-blue-500);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 12px;
+  padding: 1em;
+  padding-top: 2em;
+  padding-bottom: 0.5em;
+}
+
+section > .skills > * > p {
+  white-space: nowrap;
 }
