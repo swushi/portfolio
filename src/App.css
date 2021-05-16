@@ -21,6 +21,18 @@ h3 {
   font-size: 1.25em;
 }
 
+h4 {
+  font-size: 1.7em;
+}
+
+h5 {
+  font-size: 2em;
+}
+
+h6 {
+  font-size: 1.25em;
+}
+
 @media (min-width: 40em) {
   h1 {
     font-size: 5.75em;
@@ -31,17 +43,34 @@ h3 {
   }
   
   h3 {
+    font-size: 2em;
+  }
+
+  h4 {
+    font-size: 1.7em;
+  }
+
+  h5 {
+    font-size: 2em;
+  }
+
+  h6 {
     font-size: 1.25em;
   }
 }
 
-h1,h2,h3,h6,span,a {
+h1,h2,h3,h4,h5,h6,span,a {
   line-height: 0.85em;
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 p {
-  line-height: 1.7em;
+  line-height: 1.5em;
   margin-top: 0.5em;
   color: var(--color-offblack);
 }
@@ -52,7 +81,7 @@ header {
   background-color: var(--color-blue-500);
   position: relative;
   display: flex;
-  z-index: -100;
+  /* z-index: -100; */
   justify-content: center;
 }
 
@@ -188,4 +217,20 @@ section > .content {
 
 section > .skills > * > p {
   white-space: nowrap;
+}
+
+.project {
+  background-color: var(--color-blue-500);
+  border-radius: 12px;
+  padding: 1em;
+  margin-top: 1em;
+}
+
+.project>.accolade {
+  display: flex;
+  align-items: center
+}
+
+.project>.accolade>.accolade-icon {
+  margin-right: 0.5em;
 }

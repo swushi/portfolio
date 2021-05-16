@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./App.css";
-import { FaGithub } from "react-icons/fa";
+import { FaStar, FaCloudDownloadAlt } from "react-icons/fa";
 import {
   SiFirebase,
   SiReact,
@@ -48,9 +48,9 @@ function App() {
           <img src={avatar} alt="Sam" />
         </div>
         <navbar>
-          <h3>Skills</h3>
-          <h3>Projects</h3>
-          <h3>Resume</h3>
+          <h6><a href="#skills">Skills</a></h6>
+          <h6>Projects</h6>
+          <h6>Resume</h6>
         </navbar>
         <div className="content">
           <div className="top">
@@ -71,7 +71,7 @@ function App() {
       </header>
       <section>
         <div className="content">
-          <h2>Skills</h2>
+          <h3><a name="skills">Skills</a></h3>
           <div className="skills">
             <div className="skill">
               <SiReact size={50} />
@@ -108,6 +108,37 @@ function App() {
             <div className="skill">
               <SiFirebase size={50} />
               <p>Firebase</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="content">
+          <h3>Projects</h3>
+          <div className="projects">
+            <div className="project">
+              <div className="language">TypeScript</div>
+              <h4>react-native-input-outline</h4>
+              <p>A performant React Native TextInput with fully configurable options developed using Reanimated v2.</p>
+              <div className="accolade">
+                <FaStar size={20} className="accolade-icon"/>
+                <span>78</span>
+              </div>
+              <div className="accolade">
+                <FaCloudDownloadAlt size={20} className="accolade-icon"/>
+                <span>500 Weekly Downloads</span>
+              </div>
+            </div>
+            <div className="project">
+              <div className="language"></div>
+              <h2></h2>
+              <h3></h3>
+            </div>
+            <div className="project">
+              <div className="language"></div>
+              <h2></h2>
+              <h3></h3>
             </div>
           </div>
         </div>
