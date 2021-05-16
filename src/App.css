@@ -234,3 +234,13 @@ section > .skills > * > p {
 .project>.accolade>.accolade-icon {
   margin-right: 0.5em;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 3em;
+}
+
+footer > * {
+  margin-right: 2em;
+}

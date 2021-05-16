@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./App.css";
-import { FaStar, FaCloudDownloadAlt } from "react-icons/fa";
+import { FaStar, FaCloudDownloadAlt, FaMailBulk } from "react-icons/fa";
 import {
   SiFirebase,
   SiReact,
@@ -8,11 +8,10 @@ import {
   SiAmazonaws,
   SiLinkedin,
   SiGithub,
-  SiNpm,
   SiTypescript,
   SiGraphql,
-  SiDatacamp,
 } from "react-icons/si";
+import { GrMail } from 'react-icons/gr';
 import { DiDatabase, DiGoogleCloudPlatform } from "react-icons/di";
 import { useEffect, useRef, useState } from "react";
 import accountable_mockup from "./accountable_mockup.png";
@@ -49,7 +48,7 @@ function App() {
         </div>
         <navbar>
           <h6><a href="#skills">Skills</a></h6>
-          <h6>Projects</h6>
+          <h6><a href="#projects">Projects</a></h6>
           <h6>Resume</h6>
         </navbar>
         <div className="content">
@@ -71,7 +70,7 @@ function App() {
       </header>
       <section>
         <div className="content">
-          <h3><a name="skills">Skills</a></h3>
+          <h3 id="skills" >Skills</h3>
           <div className="skills">
             <div className="skill">
               <SiReact size={50} />
@@ -115,7 +114,7 @@ function App() {
 
       <section>
         <div className="content">
-          <h3>Projects</h3>
+          <h3 id="projects">Projects</h3>
           <div className="projects">
             <div className="project">
               <div className="language">TypeScript</div>
@@ -131,18 +130,24 @@ function App() {
               </div>
             </div>
             <div className="project">
-              <div className="language"></div>
-              <h2></h2>
-              <h3></h3>
+            <div className="language">React-Native</div>
+              <h4>Accountable</h4>
+              <p>A social habit tracking mobile application.</p>
             </div>
             <div className="project">
-              <div className="language"></div>
-              <h2></h2>
-              <h3></h3>
+            <div className="language">React-Native</div>
+              <h4>iProf</h4>
+              <p>A course and professor lookup tool for the University of North Texas.</p>
             </div>
           </div>
         </div>
       </section>
+
+      <footer>
+        <SiGithub size={40} />
+        <SiLinkedin size={40} />
+        <GrMail size={40} />
+      </footer>
     </div>
   );
 }
