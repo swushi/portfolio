@@ -238,7 +238,9 @@ section > .skills > * > p {
 footer {
   display: flex;
   justify-content: center;
-  margin: 3em;
+  margin-top: 2em;
+  padding: 3em;
+  background-color: #d3d3d3;
 }
 
 footer > * {
