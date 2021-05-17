@@ -81,7 +81,6 @@ header {
   background-color: var(--color-blue-500);
   position: relative;
   display: flex;
-  /* z-index: -100; */
   justify-content: center;
 }
 
@@ -91,7 +90,7 @@ header > .content {
   display: flex;
   flex-direction: column;
   flex: 1;
-  z-index: 100;
+  z-index: 1;
 }
 
 header > .content > .top {
@@ -186,7 +185,6 @@ section {
 section > .content {
   margin-inline: auto;
   position: relative;
-  z-index: -100;
   max-width: 41em;
 }
 

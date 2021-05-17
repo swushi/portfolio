@@ -1,22 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "./App.css";
-import { FaStar, FaCloudDownloadAlt, FaMailBulk } from "react-icons/fa";
 import {
-  SiFirebase,
-  SiReact,
-  SiRedux,
-  SiAmazonaws,
   SiLinkedin,
   SiGithub,
-  SiTypescript,
-  SiGraphql,
 } from "react-icons/si";
 import { GrMail } from 'react-icons/gr';
-import { DiDatabase, DiGoogleCloudPlatform } from "react-icons/di";
 import { useEffect, useRef, useState } from "react";
-import accountable_mockup from "./accountable_mockup.png";
-import iprof_mockup from "./iprof_mockup.png";
-import avatar from "./Portfolio_pic-removebg.png";
+import iprof_mockup from "./assets/iprof_mockup.png";
+import avatar from "./assets/Portfolio_pic-removebg.png";
+import ProjectItem from "./components/ProjectItem";
+import SkillsList from "./components/SkillsList";
+
 
 function App() {
   const [, setInnerHeight] = useState(window.innerHeight);
@@ -36,6 +30,10 @@ function App() {
   }, []);
 
   const isMobile = innerWidth <= 768;
+
+  const handleProjectClick = () => {
+    console.log("WOOO")
+  }
 
   return (
     <div className="App">
@@ -62,7 +60,7 @@ function App() {
               world changing technologies, and open-source development with
               great experience with web and mobile apps.
             </p>
-            <a href="#" className="hello">
+            <a href="mailto:samautrey7@gmail.com" className="hello">
               SAY HELLO
             </a>
           </div>
@@ -71,44 +69,7 @@ function App() {
       <section>
         <div className="content">
           <h3 id="skills" >Skills</h3>
-          <div className="skills">
-            <div className="skill">
-              <SiReact size={50} />
-              <p>React-Native</p>
-            </div>
-            <div className="skill">
-              <SiTypescript size={50} />
-              <p>TypeScript</p>
-            </div>
-            <div className="skill">
-              <DiGoogleCloudPlatform size={50} />
-              <p>Google Cloud</p>
-            </div>
-            <div className="skill">
-              <SiAmazonaws size={50} />
-              <p>AWS</p>
-            </div>
-            <div className="skill">
-              <SiReact size={50} />
-              <p>ReactJS</p>
-            </div>
-            <div className="skill">
-              <SiRedux size={50} />
-              <p>Redux</p>
-            </div>
-            <div className="skill">
-              <SiGraphql size={50} />
-              <p>GraphQL</p>
-            </div>
-            <div className="skill">
-              <DiDatabase size={50} />
-              <p>NoSQL</p>
-            </div>
-            <div className="skill">
-              <SiFirebase size={50} />
-              <p>Firebase</p>
-            </div>
-          </div>
+          <SkillsList />
         </div>
       </section>
 
@@ -116,29 +77,23 @@ function App() {
         <div className="content">
           <h3 id="projects">Projects</h3>
           <div className="projects">
-            <div className="project">
-              <div className="language">TypeScript</div>
-              <h4>react-native-input-outline</h4>
-              <p>A performant React Native TextInput with fully configurable options developed using Reanimated v2.</p>
-              <div className="accolade">
-                <FaStar size={20} className="accolade-icon"/>
-                <span>78</span>
-              </div>
-              <div className="accolade">
-                <FaCloudDownloadAlt size={20} className="accolade-icon"/>
-                <span>500 Weekly Downloads</span>
-              </div>
-            </div>
-            <div className="project">
-            <div className="language">React-Native</div>
-              <h4>Accountable</h4>
-              <p>A social habit tracking mobile application.</p>
-            </div>
-            <div className="project">
-            <div className="language">React-Native</div>
-              <h4>iProf</h4>
-              <p>A course and professor lookup tool for the University of North Texas.</p>
-            </div>
+            <ProjectItem 
+              language="TypeScript" 
+              title="react-native-input-outline" 
+              body="A performant React Native TextInput with fully configurable options developed using Reanimated v2." 
+              accolades
+              onClick={handleProjectClick}
+            />
+            <ProjectItem 
+              language="React-Native" 
+              title="iProf" 
+              body="A course and professor lookup tool for the University of North Texas." 
+            />
+            <ProjectItem 
+              language="React-Native" 
+              title="Accontable" 
+              body="A social habit tracking mobile application." 
+            />
           </div>
         </div>
       </section>
