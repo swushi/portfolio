@@ -1,6 +1,5 @@
 import React from 'react';
-import accountable_mockup from "../assets/accountable_mockup.png";
-import { FaStar, FaCloudDownloadAlt, FaMailBulk } from "react-icons/fa";
+import { FaStar, FaCloudDownloadAlt } from "react-icons/fa";
 
 const ProjectItem = ({
   language,
@@ -9,9 +8,8 @@ const ProjectItem = ({
   accolades,
   onClick
 }) => {
-  console.log('render proj item')
   return (
-    <div className="project" onClick={() => console.log("WHAT")} >
+    <div className="project" onClick={onClick} >
       <div className="language">{language}</div>
       <h4>{title}</h4>
       <p>{body}</p>
@@ -28,11 +26,6 @@ const ProjectItem = ({
           <span>500 Weekly Downloads</span>
         </div>
       }
-
-      <div className="project-showcase">
-        {/* <img src={accountable_mockup} alt="accountable app preview" /> */}
-
-      </div>
     </div>
   );
 }

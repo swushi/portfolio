@@ -6,16 +6,19 @@ import {
 } from "react-icons/si";
 import { GrMail } from 'react-icons/gr';
 import { useEffect, useRef, useState } from "react";
-import iprof_mockup from "./assets/iprof_mockup.png";
+import projectMeta from './constants/projects';
 import avatar from "./assets/Portfolio_pic-removebg.png";
 import ProjectItem from "./components/ProjectItem";
 import SkillsList from "./components/SkillsList";
+import ProjectShowcase from "./components/ProjectShowcase";
 
+const BLUR_OPACITY = 0.5;
 
 function App() {
   const [, setInnerHeight] = useState(window.innerHeight);
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const height = useRef(window.innerHeight).current;
+  const [showModal, setShowModal] = useState(null);
 
   function handleWindowSizeChange() {
     setInnerHeight(window.innerHeight);
@@ -32,12 +35,12 @@ function App() {
   const isMobile = innerWidth <= 768;
 
   const handleProjectClick = () => {
-    console.log("WOOO")
+    setShowModal(0)
   }
 
   return (
     <div className="App">
-      <header style={{ height: isMobile ? height : window.innerHeight }}>
+      <header style={{ height: isMobile ? height : window.innerHeight, opacity: showModal !== null ? BLUR_OPACITY : 1}}>
         <div className="circle circle1"></div>
         <div className="circle circle2"></div>
         <div className="circle circle3"></div>
@@ -66,37 +69,47 @@ function App() {
           </div>
         </div>
       </header>
-      <section>
+      <section style={{opacity: showModal !== null ? BLUR_OPACITY : 1}} >
         <div className="content">
           <h3 id="skills" >Skills</h3>
           <SkillsList />
         </div>
       </section>
 
-      <section>
+      <section style={{opacity: showModal !== null ? BLUR_OPACITY : 1}} >
         <div className="content">
           <h3 id="projects">Projects</h3>
           <div className="projects">
-            <ProjectItem 
-              language="TypeScript" 
-              title="react-native-input-outline" 
-              body="A performant React Native TextInput with fully configurable options developed using Reanimated v2." 
+            <ProjectItem
+              language="TypeScript"
+              title="react-native-input-outline"
+              body="A performant React Native TextInput with fully configurable options developed using Reanimated v2."
               accolades
               onClick={handleProjectClick}
             />
-            <ProjectItem 
-              language="React-Native" 
-              title="iProf" 
-              body="A course and professor lookup tool for the University of North Texas." 
+            <ProjectItem
+              language="React-Native"
+              title="iProf"
+              body="A course and professor lookup tool for the University of North Texas."
             />
-            <ProjectItem 
-              language="React-Native" 
-              title="Accontable" 
-              body="A social habit tracking mobile application." 
+            <ProjectItem
+              language="React-Native"
+              title="Accontable"
+              body="A social habit tracking mobile application."
             />
+
           </div>
         </div>
       </section>
+
+      {showModal !== null &&
+        <ProjectShowcase 
+          headerImg={projectMeta[showModal].headerImg}
+          title={projectMeta[showModal].title}
+          body={projectMeta[showModal].body}
+          onClose={() => setShowModal(null)}
+        />
+      }
 
       <footer>
         <SiGithub size={40} />
