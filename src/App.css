@@ -247,6 +247,8 @@ section>.skills>*>p {
 
 .project-showcase {
     background-color: white;
+    border: 2px solid var(--color-blue-500);
+    border-radius: 12px;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -256,6 +258,16 @@ section>.skills>*>p {
     margin-top: -17.5em;
     margin-left: -47.5%;
     padding: 1em 0em 1em 1em;
+    animation: showcase-slide-in 500ms ease-in-out;
+}
+
+@keyframes showcase-slide-in {
+    0% {
+        transform: translateX(1500px)
+    }
+    100% {
+        transform: translateX(0px)
+    }
 }
 
 .project-showcase>img {
